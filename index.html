@@ -37,8 +37,7 @@
         <script src="data/GCCWardBoundary_2.js"></script>
         <script src="data/GCCZoneBoundary_3.js"></script>
         <script src="data/RiversTanks_4.js"></script>
-        <script src="data/NaturalDrainagederivedfromDEM_6.js"></script>
-        <script src="data/InterDepartmentIssueLocation_7.js"></script>
+        <script src="data/InterDepartmentIssueLocation_6.js"></script>
         <script>
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
@@ -242,53 +241,7 @@
                                               {pane: 'pane_NaturalDrainageFlow_5'});
         bounds_group.addLayer(layer_NaturalDrainageFlow_5);
         map.addLayer(layer_NaturalDrainageFlow_5);
-        function pop_NaturalDrainagederivedfromDEM_6(feature, layer) {
-            var popupContent = '<table>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['fid'] !== null ? autolinker.link(feature.properties['fid'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['cat'] !== null ? autolinker.link(feature.properties['cat'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                    <tr>\
-                        <td colspan="2">' + (feature.properties['label'] !== null ? autolinker.link(feature.properties['label'].toLocaleString()) : '') + '</td>\
-                    </tr>\
-                </table>';
-            var content = removeEmptyRowsFromPopupContent(popupContent, feature);
-			layer.on('popupopen', function(e) {
-				addClassToPopupIfMedia(content, e.popup);
-			});
-			layer.bindPopup(content, { maxHeight: 400 });
-        }
-
-        function style_NaturalDrainagederivedfromDEM_6_0() {
-            return {
-                pane: 'pane_NaturalDrainagederivedfromDEM_6',
-                opacity: 1,
-                color: 'rgba(26,121,255,1.0)',
-                dashArray: '',
-                lineCap: 'square',
-                lineJoin: 'bevel',
-                weight: 4.0,
-                fillOpacity: 0,
-                interactive: false,
-            }
-        }
-        map.createPane('pane_NaturalDrainagederivedfromDEM_6');
-        map.getPane('pane_NaturalDrainagederivedfromDEM_6').style.zIndex = 406;
-        map.getPane('pane_NaturalDrainagederivedfromDEM_6').style['mix-blend-mode'] = 'normal';
-        var layer_NaturalDrainagederivedfromDEM_6 = new L.geoJson(json_NaturalDrainagederivedfromDEM_6, {
-            attribution: '',
-            interactive: false,
-            dataVar: 'json_NaturalDrainagederivedfromDEM_6',
-            layerName: 'layer_NaturalDrainagederivedfromDEM_6',
-            pane: 'pane_NaturalDrainagederivedfromDEM_6',
-            onEachFeature: pop_NaturalDrainagederivedfromDEM_6,
-            style: style_NaturalDrainagederivedfromDEM_6_0,
-        });
-        bounds_group.addLayer(layer_NaturalDrainagederivedfromDEM_6);
-        map.addLayer(layer_NaturalDrainagederivedfromDEM_6);
-        function pop_InterDepartmentIssueLocation_7(feature, layer) {
+        function pop_InterDepartmentIssueLocation_6(feature, layer) {
             var popupContent = '<table>\
                     <tr>\
                         <th scope="row">Issues</th>\
@@ -326,9 +279,9 @@
 			layer.bindPopup(content, { maxHeight: 400 });
         }
 
-        function style_InterDepartmentIssueLocation_7_0() {
+        function style_InterDepartmentIssueLocation_6_0() {
             return {
-                pane: 'pane_InterDepartmentIssueLocation_7',
+                pane: 'pane_InterDepartmentIssueLocation_6',
                 shape: 'diamond',
                 radius: 6.8,
                 opacity: 1,
@@ -343,30 +296,29 @@
                 interactive: true,
             }
         }
-        map.createPane('pane_InterDepartmentIssueLocation_7');
-        map.getPane('pane_InterDepartmentIssueLocation_7').style.zIndex = 407;
-        map.getPane('pane_InterDepartmentIssueLocation_7').style['mix-blend-mode'] = 'normal';
-        var layer_InterDepartmentIssueLocation_7 = new L.geoJson(json_InterDepartmentIssueLocation_7, {
+        map.createPane('pane_InterDepartmentIssueLocation_6');
+        map.getPane('pane_InterDepartmentIssueLocation_6').style.zIndex = 406;
+        map.getPane('pane_InterDepartmentIssueLocation_6').style['mix-blend-mode'] = 'normal';
+        var layer_InterDepartmentIssueLocation_6 = new L.geoJson(json_InterDepartmentIssueLocation_6, {
             attribution: '',
             interactive: true,
-            dataVar: 'json_InterDepartmentIssueLocation_7',
-            layerName: 'layer_InterDepartmentIssueLocation_7',
-            pane: 'pane_InterDepartmentIssueLocation_7',
-            onEachFeature: pop_InterDepartmentIssueLocation_7,
+            dataVar: 'json_InterDepartmentIssueLocation_6',
+            layerName: 'layer_InterDepartmentIssueLocation_6',
+            pane: 'pane_InterDepartmentIssueLocation_6',
+            onEachFeature: pop_InterDepartmentIssueLocation_6,
             pointToLayer: function (feature, latlng) {
                 var context = {
                     feature: feature,
                     variables: {}
                 };
-                return L.shapeMarker(latlng, style_InterDepartmentIssueLocation_7_0(feature));
+                return L.shapeMarker(latlng, style_InterDepartmentIssueLocation_6_0(feature));
             },
         });
-        bounds_group.addLayer(layer_InterDepartmentIssueLocation_7);
-        map.addLayer(layer_InterDepartmentIssueLocation_7);
+        bounds_group.addLayer(layer_InterDepartmentIssueLocation_6);
+        map.addLayer(layer_InterDepartmentIssueLocation_6);
         var baseMaps = {};
         var overlaysTree = [
-            {label: '<img src="legend/InterDepartmentIssueLocation_7.png" /> Inter-Department Issue Location', layer: layer_InterDepartmentIssueLocation_7},
-            {label: '<img src="legend/NaturalDrainagederivedfromDEM_6.png" /> Natural Drainage derived from DEM', layer: layer_NaturalDrainagederivedfromDEM_6},
+            {label: '<img src="legend/InterDepartmentIssueLocation_6.png" /> Inter-Department Issue Location', layer: layer_InterDepartmentIssueLocation_6},
             {label: "Natural Drainage Flow", layer: layer_NaturalDrainageFlow_5},
             {label: '<img src="legend/RiversTanks_4.png" /> Rivers & Tanks', layer: layer_RiversTanks_4},
             {label: '<img src="legend/GCCZoneBoundary_3.png" /> GCC Zone Boundary', layer: layer_GCCZoneBoundary_3},
